@@ -36,7 +36,14 @@ module.exports = {
             const chat_from = `${ctx.message.chat.first_name} (id: ${ctx.message.chat.id})`
             console.log(`Chat from ${chat_from} (Response Time: ${response_time})`)
           })
-          bot.hears('Hello', (ctx) => ctx.reply('Wassup'))
+          bot.hears('Hello', (ctx) => list.then(res=>{
+            arr = [];
+            str = ''
+            for(let i=0; i<res.length; i++){
+                str = str + '-' +  res[i].name + '\n\n'
+            }
+            ctx.reply(`It is 12pm, and you have not completed these tasks that you are supposed to do. How do you feel about yourself? You better be doing them now or you are not going to get shit: \n\n ${str}`)
+        }))
           bot.launch()
     },
 
