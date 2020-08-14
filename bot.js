@@ -18,7 +18,6 @@ const https = require("https");
 //   .then(text => {
 //       return text
 //   })
-
 const list = fetch(
   "https://api.trello.com/1/lists/5efc2d3e55d5c23f6be66d4a/cards?key=9b00aa205340fe8d80aea074e99f164c&token=7528c72a0346775d21e4cec3491c0f900e738587e5e7bbc9e29b2baaa7b3c744",
   {
@@ -70,7 +69,7 @@ module.exports = {
     bot.on("text", (ctx) => {
       ctx.reply("Hello");
     });
-    cron.schedule("0 4 * * *", () => {
+    cron.schedule("0 12 * * *", () => {
       fetch(
         "https://api.trello.com/1/lists/5efc2d3e55d5c23f6be66d4a/cards?key=9b00aa205340fe8d80aea074e99f164c&token=7528c72a0346775d21e4cec3491c0f900e738587e5e7bbc9e29b2baaa7b3c744",
         {
@@ -97,7 +96,7 @@ module.exports = {
       list.then((res) => {});
     });
 
-    cron.schedule("0 12 * * *", () => {
+    cron.schedule("0 18 * * *", () => {
       fetch(
         "https://api.trello.com/1/lists/5efc2d3e55d5c23f6be66d4a/cards?key=9b00aa205340fe8d80aea074e99f164c&token=7528c72a0346775d21e4cec3491c0f900e738587e5e7bbc9e29b2baaa7b3c744",
         {
@@ -134,7 +133,7 @@ module.exports = {
       });
     });
 
-    cron.schedule("0 16 * * *", () => {
+    cron.schedule("0 0 * * *", () => {
       fetch(
         "https://api.trello.com/1/lists/5f0fcd7ea8ece5653f61f51a/moveAllCards?key=9b00aa205340fe8d80aea074e99f164c&token=7528c72a0346775d21e4cec3491c0f900e738587e5e7bbc9e29b2baaa7b3c744&idBoard=5efc2d37b6e7642f6ba04eed&idList=5efc2d3e55d5c23f6be66d4a",
         {
